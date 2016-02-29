@@ -7,7 +7,7 @@ function set_power() {
     co=$2   # country
     pwr=$3  # power
 
-    iw reg set co # BO/GY
+    iw reg set $co # BO/GY
     sleep 3
     iwconfig $iface txpower $pwr
     sleep 3
@@ -44,7 +44,6 @@ main() {
 
     set_power $iface $country $power
     run_mdk $iface $count $bssid $essid $pckts
-
 }
 
 main
